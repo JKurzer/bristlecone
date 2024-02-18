@@ -4,7 +4,6 @@ Bristlecone is a simple game-centric protocol definition that significantly redu
 The core definition of Bristlecone is simple:
 
 - Bristlecone uses UDP over IPv4.  A successor protocol will use either UDP over IPv6 or a raw IPv6 packet.  
-- Bristlecone uses a "rolling guess" problem for spoofing protection.  
 - Each Bristlecone datagram schema uses a unique port.  
 - Bristlecone datagram schemas are statically sized. As a result, Bristlecone is recommended only for small schemas.
 - The recommended Bristlecone datagram sizes are 16, 24, and 32 bytes.
