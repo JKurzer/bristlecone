@@ -38,7 +38,7 @@ Finally, we recommend that:
 
 Using symmetric encryption as a token of successful authentication and authorization means that packets which do not decrypt successfully can be rejected with no knowledge dependencies by edge nodes. Further, by allocating the same symmetric key to all clients that, for example, share a lobby in a multiplayer game, attestation of session membership is provided by the IP-Key pair. Only a compromise of both a valid IP and a live key can successfully allow a DoS to pass the edge, while clients in the same lobby can transparently decrypt packets from one another, allowing sophisticated edge reflection schemes.
 
-**Q&A**
+**Q&A**   
 Q: Why handle endian-ness in this unusual way?  
 A: Very few games are deployed to big-endian systems. These systems do not need the additional complexity of implied support, and many cannot support big-endian transparently due to exotic bit-manipulation or handwritten assembly. As a result, this saves considerable ambiguity that could lead to serious coding errors and allows the parsing of datagrams in a branchless fashion while avoiding transposition costs. It still fully supports multi-endian systems, just in an atypical way. Should this come up in practice, Hedra Group is open to amending the standard.  
    
