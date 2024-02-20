@@ -44,8 +44,7 @@ A: Very few games are deployed to big-endian systems. These systems do not need 
    
 **Q: Why use one port per schema?**    
 A1: This allows traffic to be separated using routing indirection without changes to client code. If your server architecture changes, and some component of your traffic needs to be handled by a new microservice, or if you switch to a monolithic design, separated datagram streams make this transparent to the client.    
-A2: This allows significantly better separation of concerns, as a given stream can be handled completely by taking only the relevant schema as a dependency.    
-A3: It is awkward and undesirable to conflate parsing of different datagrams, both from a threading semantics standpoint and a practical standpoint.   
+A2: This allows significantly better separation of concerns, as a given stream can be handled completely by taking only the relevant schema as a dependency. It is awkward and undesirable to conflate parsing of different datagrams, both from a threading semantics standpoint and a practical standpoint.   
    
 **Q: Why use end to end encryption, and why this way?**   
 A1: Bristlecone **does not use end to end encryption.** It explicitly requires no guarantee that the symmetric key not be provided to edge nodes for traffic inspection.   
