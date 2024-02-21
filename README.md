@@ -30,7 +30,7 @@ Bristlecone treats datagrams encoded with different endianness as differing data
 - These must be encrypted without being transposed to network byte order.
 
 Finally, we recommend that:
-- The encryption be symmetric key negotiated over a TLS2+ secured connection.
+- The encryption be symmetric key negotiated over a TLS2+ secured connection. mTLS is strongly preferred.
 - This negotiation process should include both authentication and authorization before symmetric key issuance.
 - This negotiation process should transmit the port and schema mapping for the Bristlecone datagrams expected to be used.
 - This negotiation process should ensure schema compatibility.
