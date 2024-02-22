@@ -1,4 +1,4 @@
-# bristlecone
+# bristlecone standard
 Bristlecone is a simple game-centric protocol definition that significantly reduces effective latency.
 
 The core definition of Bristlecone is simple:
@@ -20,14 +20,15 @@ The core definition of Bristlecone is simple:
 Taken together, this allows Bristlecone to **instantaneously absorb packet loss without a variable retransmission scheme or a sliding window.** 
 Bristlecone transparently tolerates packet disordering of up to three, allowing the fastest packet in any run of 3 clone sets to be used.  
 
-Bristlecone adds three additional characteristics.
-- All bristlecone traffic is encrypted at the clone level.
-- This encryption is negotiated by a single short-lived TCP/IP connection before bristlecone sessions start.
-- Use of RSA is contraindicated due to expected near-term quantum compromise.
-
-Bristlecone treats datagrams encoded with different endianness as differing datagrams. As a result:
-- These must be assigned differing ports.
-- These must be encrypted without being transposed to network byte order.
+Bristlecone has five additional major requirements:
+- All bristlecone traffic is encrypted at the clone level, by encrypting the 3 datagrams as a single block.
+- This encryption is negotiated by a single long-lived TCP/IP connection before bristlecone sessions start.
+- This long-lived connection must maintain: 
+-   A time keeping pulse, implementing an NTP-like algorithm. This allows extremely compressed timestamps to be used.
+-   The publication of the schema-port mapping and the schemas, as well as any changes. In-place schema change support is not explicitly provided or contraindicated.
+- Bristlecone treats datagrams encoded with different endianness as differing datagrams. As a result:
+-   These must be assigned differing ports.
+-   These must be encrypted without being transposed to network byte order.
 
 Finally, we recommend that:
 - The encryption be symmetric key negotiated over a TLS2+ secured connection. mTLS is strongly preferred.
