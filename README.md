@@ -16,6 +16,7 @@ The core definition of Bristlecone is simple:
   - In practice, we expect some users to require these, and support will be expanded over time.
 - A bristlecone transmission of 3 datagrams is called a clone.
 - Bristlecone transmits between 1 and 3 instances of each clone, depending on ECN.
+- The default is 2 clones per clone set.
 - These clone sets are transmitted as fast as possible, with the goal that all copies in a cloneset be in-flight simultaneously.
 - These clones use differing DSCP signifiers to help ensure differing transmission behaviors.
   
