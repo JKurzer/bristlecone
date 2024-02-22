@@ -11,8 +11,8 @@ The core definition of Bristlecone is simple:
 - Each transmission contains the current datagram and the previous two.
 - For the first & second transmission, a zero fill may be used or a nonce supplied in the available space.
 - Each Bristlecone transmission is thus statically sized.
-  - These sizes must be inferrable at compile time.
-  - As a result, conformant bristlecone implementations do not support variable length fields.
+- These sizes must be inferrable at compile time.
+  - As a result, conformant bristlecone implementations do not support true variable length fields.
   - In practice, we expect some users to require these, and support will be expanded over time.
 - A bristlecone transmission of 3 datagrams is called a clone.
 - Bristlecone transmits between 1 and 3 instances of each clone, depending on ECN.
