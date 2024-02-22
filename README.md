@@ -6,7 +6,7 @@ The core definition of Bristlecone is simple:
 - Bristlecone uses UDP over IPv4.  A successor protocol will use either UDP over IPv6 or a raw IPv6 packet.  
 - Each Bristlecone datagram schema uses a unique port.  
 - Bristlecone datagram schemas are statically sized. As a result, Bristlecone is recommended only for small schemas.
-- The recommended Bristlecone datagram sizes are 16, 24, and 32 bytes.
+- The recommended Bristlecone datagram sizes are 8, 16, 24, and 32 bytes.
 - Each Bristlecone transmission contains only one datagram schema.  
 - Each transmission contains the current datagram and the previous two.
 - For the first & second transmission, a zero fill may be used or a nonce supplied in the available space.
